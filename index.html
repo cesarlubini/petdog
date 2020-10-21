@@ -15,8 +15,8 @@
 
       <!-- Inserir o nome do Cachorro -->
       <div class="input-block">
-        <label for="dogName">Nome do cachorro</label>
-        <input type="text" id="dogName" placeholder="Nome do cachorro">
+        <label for="dogNameInput">Nome do cachorro</label>
+        <input type="text" id="dogNameInput" placeholder="Nome do cachorro">
       </div>
       
       <!-- Selecionar a Raça do Cachorro -->
@@ -28,7 +28,7 @@
       </div>
 
       <div class="input-block">
-        <button class="primary-button" onclick="getDogPicture()">Ver resultado</button>
+        <button class="primary-button" onclick="getNewPicture()">Ver resultado</button>
       </div>
 
     </section>
@@ -37,12 +37,34 @@
       <div class="img-container">
         <span id="pd-img"></span>
       </div>
+      <div class="name-container">
+        <span id="dogName"></span>
+      </div>
 
     </section>
   </main>
 
 
+  <script src="./public/scripts/functions.js"></script>
   <script src="./public/scripts/xhr.js"></script>
   <script src="./public/scripts/index.js"></script>
 </body>
 </html>
+
+
+<!-- 
+Para implementar
+
+[x] Verificar ; ao decorrer do código
+[x] Alterar comparações com == para ===
+[x] Isolar funcão de criar o select option 
+
+[x] Pegar valor do select
+[x] Montar link para a requisição da foto
+
+[x] Pegar valor do input dogName
+[x] Atualizar o nome do cachorro em tempo real
+
+[ ] Desenhar um layout descente
+
+ -->

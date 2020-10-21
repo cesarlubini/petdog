@@ -1,9 +1,17 @@
-// Pega o campo re Raças no html
-const breedSelect = document.querySelector('#breedSelect')
-console.log(breedSelect)
+// Pega os campos no html
+const breedSelect = document.querySelector('#breedSelect');
+const imgInput = document.querySelector('#pd-img');
+const dogNameInput = document.querySelector('#dogNameInput');
+const dogName = document.querySelector('#dogName');
+
+
+// Urls da api
+const urlBreeds = 'https://dog.ceo/api/breeds/list/all';
+const urlRandomImg = 'https://dog.ceo/api/breeds/image/random';
+
 
 // Pega a lista de raças e sub-raças
-xhrRequest('https://dog.ceo/api/breeds/list/all')
+xhrRequest(urlBreeds)
   .then(result => {
 
     // objeto com a lista de todas as raças e sub-raças
@@ -16,11 +24,11 @@ xhrRequest('https://dog.ceo/api/breeds/list/all')
     for (let [key, value] of Object.entries(breedsListObject)) {
 
       // Se a raça não tiver sub-raças, pega a chave do objeto e inclui no array 
-      if (value.length == 0) {
+      if (value.length === 0) {
         breeds.push(key);
 
         // Se a raça tem sub-raças, pega a chave(raça) e o valor(sub-raça) e inclui no array
-      } else if (value.length > 0) {
+      } else {
         value.forEach(subBreed => {
           breeds.push(key + "-" + subBreed);
         })
@@ -28,37 +36,12 @@ xhrRequest('https://dog.ceo/api/breeds/list/all')
     }
 
     //cria e insere os campos dentro do select
-    breeds.forEach(dog => {
-      let option = document.createElement("option")
+    createSelectOptions(breeds);
+  });
 
-      option.classList.add("dogBreed");
-      option.value = dog;
-      option.textContent = dog;
-
-      breedSelect.appendChild(option);
-    })
-
-  })
+// Primeira chamada ao carregar a página
+getDogPicture(urlRandomImg);
 
 
-
-
-
-
-
-// get a dog picture
-
-let imgInput = document.querySelector('#pd-img');
-
-xhrRequest('https://dog.ceo/api/breed/boxer/images/random')
-  .then(result => {
-    imgInput.style.backgroundImage = `url('${result.message}')`
-  })
-
-function getDogPicture() {
-  xhrRequest('https://dog.ceo/api/breed/boxer/images/random')
-    .then(result => {
-      imgInput.style.backgroundImage = `url('${result.message}')`
-    })
-
-}
+// Altera o nome do cachorro instantaneamente 
+dogNameInput.addEventListener('input', event => dogName.textContent = event.target.value);
