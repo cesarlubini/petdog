@@ -1,0 +1,24 @@
+.input-block label {
+  display: block;
+  font-size: 1.2rem;
+  padding-left: .2rem;
+}
+
+.input-block + .input-block {
+  margin-top: 1.5rem;
+}
+
+.input-block input,
+.input-block select,
+.input-block button {
+  width: 100%;
+  height: 3rem;
+  border-radius: .5rem;
+  margin-top: .5rem;
+  border:1px solid #000
+}
+
+.input-block button {
+  background-color: #fff;
+  cursor: pointer;
+}

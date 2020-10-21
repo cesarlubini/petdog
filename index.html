@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetDog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./public/css/form.css">
+</head>
+<body>
+
+  <main class="page-pd">
+    <section class="pd-info">
+
+      <!-- Inserir o nome do Cachorro -->
+      <div class="input-block">
+        <label for="dogName">Nome do cachorro</label>
+        <input type="text" id="dogName" placeholder="Nome do cachorro">
+      </div>
+      
+      <!-- Selecionar a Raça do Cachorro -->
+      <div class="input-block">
+        <label for="breedSelect">Escolha a raça</label>
+        <select name="breedSelect" id="breedSelect">
+          <option value="" disabled selected>Escolha a raça</option>
+        </select>
+      </div>
+
+      <div class="input-block">
+        <button class="primary-button" onclick="getDogPicture()">Ver resultado</button>
+      </div>
+
+    </section>
+    <section class="pd-results">
+
+      <div class="img-container">
+        <span id="pd-img"></span>
+      </div>
+
+    </section>
+  </main>
+
+
+  <script src="./public/scripts/xhr.js"></script>
+  <script src="./public/scripts/index.js"></script>
+</body>
+</html>
