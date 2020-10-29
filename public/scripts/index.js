@@ -9,7 +9,6 @@ const dogName = document.querySelector('#dogName');
 const urlBreeds = 'https://dog.ceo/api/breeds/list/all';
 const urlRandomImg = 'https://dog.ceo/api/breeds/image/random';
 
-
 // Pega a lista de raças e sub-raças
 xhrRequest(urlBreeds)
   .then(result => {

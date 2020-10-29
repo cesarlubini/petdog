@@ -4,50 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PetDog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./public/css/style.css">
-  <link rel="stylesheet" href="./public/css/form.css">
 </head>
 <body>
 
   <main class="page-pd">
-    <section class="pd-info">
+    <section class="pd-info card ">
 
-      <!-- Inserir o nome do Cachorro -->
-      <div class="input-block">
-        <label for="dogNameInput">Nome do cachorro</label>
-        <input type="text" id="dogNameInput" placeholder="Nome do cachorro">
-      </div>
-      
-      <!-- Selecionar a Raça do Cachorro -->
-      <div class="input-block">
-        <label for="breedSelect">Escolha a raça</label>
-        <select name="breedSelect" id="breedSelect">
-          <option value="" disabled selected>Escolha a raça</option>
-        </select>
-      </div>
+      <h1 class="center-align">PetDog</h1>
 
-      <div class="input-block">
-        <button class="primary-button" onclick="getNewPicture()">Ver resultado</button>
-      </div>
+      <form class="card-content">
+        <!-- Inserir o nome do Cachorro -->
+        <div class="input-field">
+          <input type="text" id="dogNameInput">
+          <label for="dogNameInput" class="validade">Nome do doguinho</label>
+        </div>
+        
+        <!-- Selecionar a Raça do Cachorro -->
+        <div class="input-field">
+          <select name="breedSelect" id="breedSelect">
+            <option value="" disabled selected>Raça do doginho</option>
+          </select>
+        </div>
+  
+        <a class="waves-effect waves-light btn" onclick="getNewPicture()">Ver resultado</a>
+      </form>
 
     </section>
+
     <section class="pd-results">
 
-      <div class="img-container">
-        <span id="pd-img"></span>
-      </div>
-      <div class="name-container">
-        <span id="dogName"></span>
-      </div>
-
+          <div class="card">
+            <div class="card-image">
+              <span id="pd-img"></span>
+            </div>
+            <div class="card-content">
+              <span id="dogName">Doguinho</span>
+            </div>
+          </div>
     </section>
   </main>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./public/scripts/functions.js"></script>
   <script src="./public/scripts/xhr.js"></script>
   <script src="./public/scripts/index.js"></script>
+
+  <script>
+
+  </script>
 </body>
 </html>
 

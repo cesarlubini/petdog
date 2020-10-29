@@ -3,12 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 body {
 
-  background: linear-gradient(90deg, rgba(255,244,235,1) 0%, rgba(255,255,255,1) 100%);
+  background: #f1f8e9
+}
+
+h1 {
+  font-size: 3rem;
+  margin:0;
 }
 
 .page-pd {
@@ -16,31 +21,44 @@ body {
   height: 100vh;
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: auto;
 }
 
 .pd-info {
-  width: 40%;
+  width: clamp(300px, 40%, 400px);
+  min-height: 400px;
   margin: 5%;
   padding: 4rem;
 }
 
 .pd-results {
-  width: 40%;
+  width: clamp(300px, 40%, 400px);
+  min-height: 400px;
   margin: 5%;
 }
 
-.img-container {
-  width: 300px;
+.pd-results .card {
+  height: 100%;
+}
+
+.pd-results .card .card-content {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 100%;
   height: 300px;
   overflow: hidden;
-  border-radius: 2rem;
   margin: auto;
 }
 
-.img-container #pd-img {
+.card-image #pd-img {
   display: block;
   
   width: 100%;
@@ -49,4 +67,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#dogName {
+  font-size: 1.5rem;
 }

@@ -6,6 +6,9 @@ function createSelectOptions(options) {
     option.value = dog;
     option.textContent = dog.replace(/-/, " ");
 
+    //adicionando MaterializeCSS para os options
+    M.FormSelect.init(breedSelect);
+
     breedSelect.appendChild(option);
   })
 }
